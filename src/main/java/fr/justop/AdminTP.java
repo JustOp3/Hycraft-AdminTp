@@ -12,6 +12,7 @@ import java.net.InetSocketAddress;
 public class AdminTP extends JavaPlugin
 {
     public static String PREFIX = "§c[§aHycraft-AdminTP§c] §r";
+    public static String PREFIX2 = "§c[§aHycraft-Spawn§c] §r";
 
     @Override
     public void onEnable() {

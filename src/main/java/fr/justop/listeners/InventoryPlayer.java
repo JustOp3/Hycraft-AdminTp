@@ -39,44 +39,44 @@ public class InventoryPlayer implements Listener
     {
         ItemMeta meta1 = PREHISTOIRE.getItemMeta();
         meta1.setDisplayName("§a§lPréhistoire");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter à la", "§aPréhostoire"));
+        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter à la", "§aPréhostoire"));
         PREHISTOIRE.setItemMeta(meta1);
         ItemMeta meta2 = ANTIQUITE.getItemMeta();
-        meta1.setDisplayName("§a§lAntiquité");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter à l'", "§aAntiquité"));
+        meta2.setDisplayName("§a§lAntiquité");
+        meta2.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter à l'", "§aAntiquité"));
         ANTIQUITE.setItemMeta(meta2);
         ItemMeta meta3 = MOYENAGE.getItemMeta();
-        meta1.setDisplayName("§a§lMoyen-âge");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter au", "§aMoyen-âge"));
+        meta3.setDisplayName("§a§lMoyen-âge");
+        meta3.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter au", "§aMoyen-âge"));
         MOYENAGE.setItemMeta(meta3);
         ItemMeta meta4 = TEMPSMODERNES.getItemMeta();
-        meta1.setDisplayName("§a§lTemps modernes");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter aux", "§aTemps modernes"));
+        meta4.setDisplayName("§a§lTemps modernes");
+        meta4.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter aux", "§aTemps modernes"));
         TEMPSMODERNES.setItemMeta(meta4);
         ItemMeta meta5 = EC.getItemMeta();
-        meta1.setDisplayName("§a§lEpoque contemporaine");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter à l'", "§aEpoque contemporaine"));
+        meta5.setDisplayName("§a§lEpoque contemporaine");
+        meta5.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter à l'", "§aEpoque contemporaine"));
         EC.setItemMeta(meta5);
         ItemMeta meta6 = MINAGE.getItemMeta();
-        meta1.setDisplayName("§e§lMinage");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter au", "§eMinage"));
+        meta6.setDisplayName("§e§lMinage");
+        meta6.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter au", "§eMinage"));
         MINAGE.setItemMeta(meta6);
         ItemMeta meta7 = SURVIE.getItemMeta();
-        meta1.setDisplayName("§e§lSurvie");
-        meta1.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "l'item pour vous ", "téléporter à la", "§eSurvie"));
+        meta7.setDisplayName("§e§lSurvie");
+        meta7.setLore(Arrays.asList("§b----------------", "§6Clic gauche sur", "§6l'item pour vous ", "§6téléporter à la", "§eSurvie"));
         SURVIE.setItemMeta(meta7);
-        ItemMeta meta8 = PREHISTOIRE.getItemMeta();
-        meta1.setDisplayName("null item");
-        meta1.setLore(null);
-        PREHISTOIRE.setItemMeta(meta8);
-        ItemMeta meta9 = PREHISTOIRE.getItemMeta();
-        meta1.setDisplayName("null item");
-        meta1.setLore(null);
-        PREHISTOIRE.setItemMeta(meta9);
-        ItemMeta meta10 = PREHISTOIRE.getItemMeta();
-        meta1.setDisplayName("null item");
-        meta1.setLore(null);
-        PREHISTOIRE.setItemMeta(meta10);
+        ItemMeta meta8 = FILLER1.getItemMeta();
+        meta8.setDisplayName("null item");
+        meta8.setLore(null);
+        FILLER1.setItemMeta(meta8);
+        ItemMeta meta9 = FILLER2.getItemMeta();
+        meta9.setDisplayName("null item");
+        meta9.setLore(null);
+        FILLER2.setItemMeta(meta9);
+        ItemMeta meta10 = FILLER3.getItemMeta();
+        meta10.setDisplayName("null item");
+        meta10.setLore(null);
+        FILLER3.setItemMeta(meta10);
     }
 
     public void openInventory(Player player)
@@ -146,12 +146,12 @@ public class InventoryPlayer implements Listener
                     player.sendMessage(AdminTP.PREFIX + "§eVous avez été téléporté à l'§bEpoque contemporaine");
                     break;
 
-                case "§a§lMinage":
+                case "§e§lMinage":
                     player.teleport(new Location(Bukkit.getWorld("Minage"), 144.0, 85.0, 64.0, 0.0f, 0.0f));
                     player.sendMessage(AdminTP.PREFIX + "§eVous avez été téléporté au §bMinage");
                     break;
 
-                case "§a§lSurvie":
+                case "§e§lSurvie":
                     player.teleport(new Location(Bukkit.getWorld("mondesurvie"), 373.0, 264.0, 529.0, 0.0f, 60.0f));
                     player.sendMessage(AdminTP.PREFIX + "§eVous avez été téléporté à la §bSurvie");
                     break;
@@ -166,11 +166,7 @@ public class InventoryPlayer implements Listener
     public void onJoin(PlayerJoinEvent event)
     {
         Player player = event.getPlayer();
-
-        if(player.isOp())
-        {
-            player.setGameMode(GameMode.CREATIVE);
-        }
+        player.setGameMode(GameMode.CREATIVE);
 
         player.teleport(new Location(Bukkit.getWorld("Lobby_Japon"), -2.0, 160.0, 0.0, 90.0f, 0.0f));
         event.setJoinMessage("§c" + player.getDisplayName() + "§e a rejoint le serveur. Souhaitons lui un bon jeu !");
