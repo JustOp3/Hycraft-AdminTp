@@ -1,7 +1,9 @@
 package fr.justop.listeners;
 
+import com.sun.source.tree.UsesTree;
 import fr.justop.AdminTP;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -164,6 +166,12 @@ public class InventoryPlayer implements Listener
     public void onJoin(PlayerJoinEvent event)
     {
         Player player = event.getPlayer();
+
+        if(player.isOp())
+        {
+            player.setGameMode(GameMode.CREATIVE);
+        }
+
         player.teleport(new Location(Bukkit.getWorld("Lobby_Japon"), -2.0, 160.0, 0.0, 90.0f, 0.0f));
         event.setJoinMessage("§c" + player.getDisplayName() + "§e a rejoint le serveur. Souhaitons lui un bon jeu !");
     }

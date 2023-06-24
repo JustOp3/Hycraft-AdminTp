@@ -26,6 +26,7 @@ public class TpCommand implements CommandExecutor {
             if(args.length == 0)
             {
                 InventoryPlayer inventoryPlayer = new InventoryPlayer();
+                inventoryPlayer.buildItems();
                 inventoryPlayer.openInventory(player);
                 return true;
             }
