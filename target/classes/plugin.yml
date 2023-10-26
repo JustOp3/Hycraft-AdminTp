@@ -1,0 +1,13 @@
+version: ultimate
+name: Hycraft-AdminTP
+main: fr.justop.AdminTP
+api-version: 1.15
+author: JustOp
+description: Simple plugin de téléporattion au spawn et aux différentes époques permettant un déplacement efficace.
+
+commands:
+  tpe:
+    description: commande admin de tp aux différentes époques.
+
+  spawn:
+    description: commande admin de tp au spawn.

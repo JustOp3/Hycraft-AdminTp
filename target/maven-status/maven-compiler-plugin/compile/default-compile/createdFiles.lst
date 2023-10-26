@@ -1,0 +1,4 @@
+fr\justop\commands\TpCommand.class
+fr\justop\AdminTP.class
+fr\justop\listeners\InventoryPlayer.class
+fr\justop\commands\SpawnCommand.class
